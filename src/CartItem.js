@@ -1,14 +1,26 @@
 import React from 'react';
 class CartItem extends React.Component {
+    constructor() {
+        // we need to use super so as to inherit the constructor of the parent class
+        super();
+        this.state = {
+            price: 999,
+            title: 'Mobile Phone',
+            qty: 1,
+            img: ''
+        }
+    }
     render() {
+        //object destructuring to get the values from the state object
+        const { price, title, qty } = this.state;
         return (
             <div className="cart-item">
                 <div className="left-block">
                     <img style={styles.image} /></div>
                 <div className="right-block">
-                    <div style={{ fontSize: 25 }}>Phone</div>
-                    <div style={{ color: "red" }}>Rs 999</div>
-                    <div style={{ color: "blue" }}>QTY : 1</div>
+                    <div style={{ fontSize: 25 }}>{title}</div>
+                    <div style={{ color: "red" }}>Rs {price}</div>
+                    <div style={{ color: "blue" }}>QTY : {qty}</div>
                     <div className="cart-item-actions">
                         {/* Buttons*/}
                         <img className="action-icons" alt="increase"
