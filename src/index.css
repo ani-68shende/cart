@@ -24,3 +24,8 @@ body {
 .action-icons:hover {
   cursor: pointer;
 }
+
+.class{
+  display : flex;
+  flex-direction: column;
+}
